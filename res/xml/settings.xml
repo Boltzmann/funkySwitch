@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- default value is a string -->
+    <EditTextPreference android:defaultValue="@string/pref_server_default" />
+
+    <PreferenceCategory android:title="@string/pref_user_profile" >
+        <EditTextPreference
+            android:key="@string/keyHost"
+            android:summary="@string/pref_server_summary"
+            android:title="@string/pref_server_title" />
+        
+        <EditTextPreference
+            android:key="@string/userName"
+            android:summary="@string/userName_summary"
+            android:title="@string/user" />
+    </PreferenceCategory>
+</PreferenceScreen>
