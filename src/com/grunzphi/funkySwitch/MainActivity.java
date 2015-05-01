@@ -17,6 +17,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
+import android.widget.ImageView;
 //import com.jcraft.jsch.*;
 import android.widget.Toast;
 
@@ -31,8 +32,6 @@ import com.jcraft.jsch.Session;
 
 import android.app.ActionBar;
 import android.app.Fragment;
-import ar.com.daidalos.afiledialog.FileChooserActivity;
-import ar.com.daidalos.afiledialog.FileChooserDialog;
 
 public class MainActivity extends Activity {
 
@@ -228,21 +227,32 @@ public class MainActivity extends Activity {
 	 * @param view The current view, here the button pressed.
 	 */
 	public void activity_simple_open(View view){
-		Intent intent = new Intent(this, FileChooserActivity.class);
-		this.startActivityForResult(intent, 0);
+		// see http://stackoverflow.com/questions/29425408/local-file-access-on-google-chrome-arc/29426331#29426331
+	    Intent intent = new Intent(Intent.ACTION_GET_CONTENT); 
+	    intent.setType("text/");
+	    startActivityForResult(intent, 0);
+//		Intent intent = new Intent(this, FileChooserActivity.class);
+//		this.startActivityForResult(intent, 0);
 	}
 
 
-	/**
-	 * Import RSA key by fileChooserDialog.
-	 */
-	public void importKey(View view) {
-		// Create the dialog.
-		FileChooserDialog dialog = new FileChooserDialog(MainActivity.this);
-
-		// Show the dialog.
-		dialog.show();
+	private void activity_android_open(View view) {
+	    Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+	    intent.addCategory(Intent.CATEGORY_OPENABLE);	
+	    intent.setType("*/*");
+	    startActivityForResult(intent, 0);
 	}
+	
+//	/**
+//	 * Import RSA key by fileChooserDialog.
+//	 */
+//	public void importKey(View view) {
+//		// Create the dialog.
+//		FileChooserDialog dialog = new FileChooserDialog(MainActivity.this);
+//
+//		// Show the dialog.
+//		dialog.show();
+//	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -295,31 +305,52 @@ public class MainActivity extends Activity {
 		toast.show();
 	}
 
+//	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//	    super.onActivityResult(requestCode, resultCode, data);
+//	    if (resultCode == Activity.RESULT_OK && requestCode == 5) {
+//	        ImageView imgView = new ImageView(this);
+//	        imgView.setImageURI(data.getData());
+//	        setContentView(imgView);
+//	    }    
+//	}
+	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (resultCode == Activity.RESULT_OK) {
-			filePath = "";
-
-			Bundle bundle = data.getExtras();
-			if(bundle != null)
-			{
-				if(bundle.containsKey(FileChooserActivity.OUTPUT_NEW_FILE_NAME)) {
-					File folder = (File) bundle.get(FileChooserActivity.OUTPUT_FILE_OBJECT);
-					String name = bundle.getString(FileChooserActivity.OUTPUT_NEW_FILE_NAME);
-					filePath = folder.getAbsolutePath() + "/" + name;
-				} else {
-					File file = (File) bundle.get(FileChooserActivity.OUTPUT_FILE_OBJECT);
-					filePath = file.getAbsolutePath();
-				}
+//		super.onActivityResult(requestCode, resultCode, data);
+//		if (resultCode == Activity.RESULT_OK) {
+//			filePath = "";
+//
+//			Bundle bundle = data.getExtras();
+//			if(bundle != null)
+//			{
+//				if(bundle.containsKey(FileChooserActivity.OUTPUT_NEW_FILE_NAME)) {
+//					File folder = (File) bundle.get(FileChooserActivity.OUTPUT_FILE_OBJECT);
+//					String name = bundle.getString(FileChooserActivity.OUTPUT_NEW_FILE_NAME);
+//					filePath = folder.getAbsolutePath() + "/" + name;
+//				} else {
+//					File file = (File) bundle.get(FileChooserActivity.OUTPUT_FILE_OBJECT);
+//					filePath = file.getAbsolutePath();
+//				}
+//			}
+//
+//			// We need an Editor object to make preference changes.
+//			// All objects are from android.context.Context
+//			SharedPreferences settings = getPreferences(Context.MODE_PRIVATE);
+		//			SharedPreferences.Editor editor = settings.edit();
+		//			editor.putString(getString(R.string.prefKey_privKeyFilePath), filePath);
+		//			editor.commit();
+		//		}
+		// TODO Auto-generated method stub
+		showToast("DONE");
+			if(resultCode==RESULT_OK){
+				filePath = data.getData().getPath();
 			}
-
 			// We need an Editor object to make preference changes.
 			// All objects are from android.context.Context
 			SharedPreferences settings = getPreferences(Context.MODE_PRIVATE);
 			SharedPreferences.Editor editor = settings.edit();
 			editor.putString(getString(R.string.prefKey_privKeyFilePath), filePath);
 			editor.commit();
-		}
 	}
 
 	private void setHostByPrefs(){
