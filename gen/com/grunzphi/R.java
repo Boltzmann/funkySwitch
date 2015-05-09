@@ -11,11 +11,7 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int custom_theme_color=0x7f060004;
-        public static final int daidalos_active_file=0x7f060002;
-        public static final int daidalos_backgroud=0x7f060001;
-        public static final int daidalos_gray=0x7f060000;
-        public static final int daidalos_inactive_file=0x7f060003;
+        public static final int custom_theme_color=0x7f080000;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -24,120 +20,87 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f070000;
-        public static final int activity_vertical_margin=0x7f070001;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int add=0x7f020000;
-        public static final int document=0x7f020001;
-        public static final int document_gray=0x7f020002;
-        public static final int folder=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int no=0x7f020005;
-        public static final int tab1=0x7f020006;
-        public static final int tick=0x7f020007;
+        public static final int ic_launcher=0x7f020000;
+        public static final int tab1=0x7f020001;
     }
     public static final class id {
-        public static final int AllLightsOffButton=0x7f0a0011;
-        public static final int AllLightsOnButton=0x7f0a0010;
-        public static final int AllOffButton=0x7f0a001d;
-        public static final int CoffeeOffButton=0x7f0a0016;
-        public static final int CoffeeOnButton=0x7f0a0015;
-        public static final int LLampOffButton=0x7f0a000f;
-        public static final int LLampOnButton=0x7f0a000e;
-        public static final int N8LampOffButton=0x7f0a000b;
-        public static final int N8LampOnButton=0x7f0a000a;
-        public static final int PrinterOffButton=0x7f0a0014;
-        public static final int PrinterOnButton=0x7f0a0013;
-        public static final int ScreenOffButton=0x7f0a001a;
-        public static final int ScreenOnButton=0x7f0a0019;
-        public static final int TableLampOffButton=0x7f0a000d;
-        public static final int TableLampOnButton=0x7f0a000c;
-        public static final int TestButton=0x7f0a001c;
-        public static final int VariableOffButton=0x7f0a0018;
-        public static final int VariableOnButton=0x7f0a0017;
-        public static final int action_settings=0x7f0a001f;
-        public static final int activity_simple_open=0x7f0a001e;
-        public static final int buttonAdd=0x7f0a0005;
-        public static final int buttonOk=0x7f0a0006;
+        public static final int AllLightsOffButton=0x7f0a0009;
+        public static final int AllLightsOnButton=0x7f0a0008;
+        public static final int AllOffButton=0x7f0a0015;
+        public static final int CoffeeOffButton=0x7f0a000e;
+        public static final int CoffeeOnButton=0x7f0a000d;
+        public static final int LLampOffButton=0x7f0a0007;
+        public static final int LLampOnButton=0x7f0a0006;
+        public static final int N8LampOffButton=0x7f0a0003;
+        public static final int N8LampOnButton=0x7f0a0002;
+        public static final int PrinterOffButton=0x7f0a000c;
+        public static final int PrinterOnButton=0x7f0a000b;
+        public static final int ScreenOffButton=0x7f0a0012;
+        public static final int ScreenOnButton=0x7f0a0011;
+        public static final int TableLampOffButton=0x7f0a0005;
+        public static final int TableLampOnButton=0x7f0a0004;
+        public static final int TestButton=0x7f0a0014;
+        public static final int VariableOffButton=0x7f0a0010;
+        public static final int VariableOnButton=0x7f0a000f;
+        public static final int action_settings=0x7f0a0017;
+        public static final int activity_simple_open=0x7f0a0016;
         public static final int fragment_container=0x7f0a0000;
-        public static final int fragmenttab1_layout=0x7f0a0009;
-        public static final int fragmenttab2_layout=0x7f0a0012;
-        public static final int fragmenttab3_layout=0x7f0a001b;
-        public static final int imageViewIcon=0x7f0a0007;
-        public static final int linearLayoutButtons=0x7f0a0004;
-        public static final int linearLayoutFiles=0x7f0a0003;
-        public static final int rootLayout=0x7f0a0001;
-        public static final int scrollView1=0x7f0a0002;
-        public static final int textViewLabel=0x7f0a0008;
+        public static final int fragmenttab1_layout=0x7f0a0001;
+        public static final int fragmenttab2_layout=0x7f0a000a;
+        public static final int fragmenttab3_layout=0x7f0a0013;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int daidalos_file_chooser=0x7f030001;
-        public static final int daidalos_file_item=0x7f030002;
-        public static final int fragmenttab1=0x7f030003;
-        public static final int fragmenttab2=0x7f030004;
-        public static final int fragmenttab3=0x7f030005;
+        public static final int fragmenttab1=0x7f030001;
+        public static final int fragmenttab2=0x7f030002;
+        public static final int fragmenttab3=0x7f030003;
     }
     public static final class menu {
         public static final int main_activity_actions=0x7f090000;
     }
     public static final class string {
-        public static final int NoConnection=0x7f050028;
-        public static final int action_settings=0x7f050015;
-        public static final int app_name=0x7f050011;
-        public static final int button_AllLights_Off=0x7f050026;
-        public static final int button_AllLights_On=0x7f050025;
-        public static final int button_All_Off=0x7f050027;
-        public static final int button_Coffee_Off=0x7f050019;
-        public static final int button_Coffee_On=0x7f050018;
-        public static final int button_LLamp_Off=0x7f05001f;
-        public static final int button_LLamp_On=0x7f05001e;
-        public static final int button_N8Lamp_Off=0x7f050017;
+        public static final int NoConnection=0x7f060017;
+        public static final int action_settings=0x7f060004;
+        public static final int app_name=0x7f060000;
+        public static final int button_AllLights_Off=0x7f060015;
+        public static final int button_AllLights_On=0x7f060014;
+        public static final int button_All_Off=0x7f060016;
+        public static final int button_Coffee_Off=0x7f060008;
+        public static final int button_Coffee_On=0x7f060007;
+        public static final int button_LLamp_Off=0x7f06000e;
+        public static final int button_LLamp_On=0x7f06000d;
+        public static final int button_N8Lamp_Off=0x7f060006;
         /**  <string name="action_addButton">Add Button</string>
     <string name ="button_new">New Button</string> 
          */
-        public static final int button_N8Lamp_On=0x7f050016;
-        public static final int button_Printer_Off=0x7f05001b;
-        public static final int button_Printer_On=0x7f05001a;
-        public static final int button_Screen_Off=0x7f050023;
-        public static final int button_Screen_On=0x7f050022;
-        public static final int button_TableLamp_Off=0x7f05001d;
-        public static final int button_TableLamp_On=0x7f05001c;
-        public static final int button_Test=0x7f050024;
-        public static final int button_Variable_Off=0x7f050021;
-        public static final int button_Variable_On=0x7f050020;
-        public static final int command_choice=0x7f050012;
-        public static final int daidalos_accept=0x7f050008;
-        public static final int daidalos_app_name=0x7f050001;
-        public static final int daidalos_cancel=0x7f050003;
-        public static final int daidalos_confirm_create_file=0x7f05000e;
-        public static final int daidalos_confirm_create_folder=0x7f050010;
-        public static final int daidalos_confirm_select_file=0x7f05000d;
-        public static final int daidalos_confirm_select_folder=0x7f05000f;
-        public static final int daidalos_create_file=0x7f050006;
-        public static final int daidalos_create_folder=0x7f050007;
-        public static final int daidalos_enter_file_name=0x7f050009;
-        public static final int daidalos_enter_folder_name=0x7f05000a;
-        public static final int daidalos_hello=0x7f050000;
-        public static final int daidalos_new_file=0x7f050005;
-        public static final int daidalos_no=0x7f05000c;
-        public static final int daidalos_ok=0x7f050004;
-        public static final int daidalos_select=0x7f050002;
-        public static final int daidalos_yes=0x7f05000b;
-        public static final int filename_of_private_key=0x7f05002a;
-        public static final int importKey=0x7f05002c;
-        public static final int keyHost=0x7f050030;
-        public static final int new_choice=0x7f050013;
-        public static final int prefKey_privKeyFilePath=0x7f05002f;
-        public static final int pref_server_default=0x7f05002d;
-        public static final int pref_server_summary=0x7f05002b;
-        public static final int pref_server_title=0x7f05002e;
-        public static final int pref_user_profile=0x7f050029;
-        public static final int title_activity_main=0x7f050014;
-        public static final int user=0x7f050032;
-        public static final int userName=0x7f050031;
-        public static final int userName_summary=0x7f050033;
+        public static final int button_N8Lamp_On=0x7f060005;
+        public static final int button_Printer_Off=0x7f06000a;
+        public static final int button_Printer_On=0x7f060009;
+        public static final int button_Screen_Off=0x7f060012;
+        public static final int button_Screen_On=0x7f060011;
+        public static final int button_TableLamp_Off=0x7f06000c;
+        public static final int button_TableLamp_On=0x7f06000b;
+        public static final int button_Test=0x7f060013;
+        public static final int button_Variable_Off=0x7f060010;
+        public static final int button_Variable_On=0x7f06000f;
+        public static final int command_choice=0x7f060001;
+        public static final int filename_of_private_key=0x7f060019;
+        public static final int importKey=0x7f06001b;
+        public static final int keyHost=0x7f06001f;
+        public static final int new_choice=0x7f060002;
+        public static final int prefKey_privKeyFilePath=0x7f06001e;
+        public static final int pref_server_default=0x7f06001c;
+        public static final int pref_server_summary=0x7f06001a;
+        public static final int pref_server_title=0x7f06001d;
+        public static final int pref_user_profile=0x7f060018;
+        public static final int title_activity_main=0x7f060003;
+        public static final int user=0x7f060021;
+        public static final int userName=0x7f060020;
+        public static final int userName_summary=0x7f060022;
     }
     public static final class style {
         /** 
@@ -161,16 +124,16 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f080000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f080001;
-        public static final int CodeFont=0x7f080004;
-        public static final int CodeFont_yellow=0x7f080005;
-        public static final int CustomTheme=0x7f080006;
-        public static final int MyActionBar=0x7f080003;
-        public static final int MyTheme=0x7f080002;
+        public static final int AppTheme=0x7f070001;
+        public static final int CodeFont=0x7f070004;
+        public static final int CodeFont_yellow=0x7f070005;
+        public static final int CustomTheme=0x7f070006;
+        public static final int MyActionBar=0x7f070003;
+        public static final int MyTheme=0x7f070002;
     }
     public static final class xml {
         public static final int preference_headers=0x7f040000;

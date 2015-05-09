@@ -8,15 +8,18 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.preference.PreferenceManager;
+import android.provider.DocumentsContract;
+import android.provider.MediaStore.Files;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-
 import android.widget.ImageView;
 //import com.jcraft.jsch.*;
 import android.widget.Toast;
@@ -229,18 +232,11 @@ public class MainActivity extends Activity {
 	public void activity_simple_open(View view){
 		// see http://stackoverflow.com/questions/29425408/local-file-access-on-google-chrome-arc/29426331#29426331
 	    Intent intent = new Intent(Intent.ACTION_GET_CONTENT); 
-	    intent.setType("text/");
-	    startActivityForResult(intent, 0);
-//		Intent intent = new Intent(this, FileChooserActivity.class);
-//		this.startActivityForResult(intent, 0);
-	}
-
-
-	private void activity_android_open(View view) {
-	    Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
 	    intent.addCategory(Intent.CATEGORY_OPENABLE);	
 	    intent.setType("*/*");
 	    startActivityForResult(intent, 0);
+//		Intent intent = new Intent(this, FileChooserActivity.class);
+//		this.startActivityForResult(intent, 0);
 	}
 	
 //	/**
@@ -304,47 +300,24 @@ public class MainActivity extends Activity {
 		Toast toast = Toast.makeText(context, text, duration);
 		toast.show();
 	}
-
-//	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//	    super.onActivityResult(requestCode, resultCode, data);
-//	    if (resultCode == Activity.RESULT_OK && requestCode == 5) {
-//	        ImageView imgView = new ImageView(this);
-//	        imgView.setImageURI(data.getData());
-//	        setContentView(imgView);
-//	    }    
-//	}
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//		super.onActivityResult(requestCode, resultCode, data);
-//		if (resultCode == Activity.RESULT_OK) {
-//			filePath = "";
-//
-//			Bundle bundle = data.getExtras();
-//			if(bundle != null)
-//			{
-//				if(bundle.containsKey(FileChooserActivity.OUTPUT_NEW_FILE_NAME)) {
-//					File folder = (File) bundle.get(FileChooserActivity.OUTPUT_FILE_OBJECT);
-//					String name = bundle.getString(FileChooserActivity.OUTPUT_NEW_FILE_NAME);
-//					filePath = folder.getAbsolutePath() + "/" + name;
-//				} else {
-//					File file = (File) bundle.get(FileChooserActivity.OUTPUT_FILE_OBJECT);
-//					filePath = file.getAbsolutePath();
-//				}
-//			}
-//
-//			// We need an Editor object to make preference changes.
-//			// All objects are from android.context.Context
-//			SharedPreferences settings = getPreferences(Context.MODE_PRIVATE);
-		//			SharedPreferences.Editor editor = settings.edit();
-		//			editor.putString(getString(R.string.prefKey_privKeyFilePath), filePath);
-		//			editor.commit();
-		//		}
-		// TODO Auto-generated method stub
-		showToast("DONE");
 			if(resultCode==RESULT_OK){
-				filePath = data.getData().getPath();
+				Uri uri = data.getData();
+				if (isExternalStorageDocument(uri)) {
+		            final String docId = DocumentsContract.getDocumentId(uri);
+		            final String[] split = docId.split(":");
+		            final String type = split[0];
+
+		            if ("primary".equalsIgnoreCase(type)) {
+		                filePath = Environment.getExternalStorageDirectory() + "/" + split[1];
+		            }
+
+		            // TODO handle non-primary volumes
+		        }
 			}
+			showToast(filePath);
 			// We need an Editor object to make preference changes.
 			// All objects are from android.context.Context
 			SharedPreferences settings = getPreferences(Context.MODE_PRIVATE);
@@ -366,5 +339,13 @@ public class MainActivity extends Activity {
 	private void showToast(String message){
 		Toast toast = Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG);
 		toast.show();
+	}
+	
+	/**
+	 * @param uri The Uri to check.
+	 * @return Whether the Uri authority is ExternalStorageProvider.
+	 */
+	private boolean isExternalStorageDocument(Uri uri) {
+	    return "com.android.externalstorage.documents".equals(uri.getAuthority());
 	}
 }
