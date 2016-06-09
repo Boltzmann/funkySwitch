@@ -106,74 +106,6 @@ public class MainActivity extends Activity {
 		return netInfo != null && netInfo.isConnectedOrConnecting();
 	}
 
-	/**
-	 * Handles ssh-connection.
-	 */
-	private class open_close_ssh extends AsyncTask<String, Void, String> {
-		/**
-		 * @param switchCommand The command that should be executed.
-		 * @return The command that was executed or an error message that the connection cannot be established.
-		 * TODO change parameter to String... so that several commands can be executed in one ssh-session.
-		 */
-		private String UserAuthPubKey(String switchCommand) {
-			try {
-				JSch jsch = new JSch();
-
-				//TODO implement user settings edit text box to set user name.
-				int port = 22;
-
-				String privateKey = filePath; 
-				//TODO System.out to logger
-				System.out.println(privateKey);
-
-				jsch.addIdentity(privateKey);
-				//TODO System.out to logger
-				System.out.println("identity added ");
-				
-				System.out.println(userName);
-				Session session = jsch.getSession(userName, host, port);
-				//TODO System.out to logger
-				System.out.println("session created.");
-
-				java.util.Properties config = new java.util.Properties();
-				config.put("StrictHostKeyChecking", "no");
-				session.setConfig(config);
-
-				session.connect();
-				// SSH Channel
-				ChannelExec channelssh = (ChannelExec)
-						session.openChannel("exec");
-				ByteArrayOutputStream baos = new ByteArrayOutputStream();
-				channelssh.setOutputStream(baos);
-
-				// Execute command
-				// TODO for each loop to exec more commands.
-				channelssh.setCommand(switchCommand);
-				channelssh.connect();
-				channelssh.disconnect();
-				session.disconnect();
-				return switchCommand + " was executed.";
-			} catch (Exception e) {
-				System.err.println(e);
-				e.printStackTrace();
-				return "No ssh connection possible.";
-			}
-		}
-
-		/**
-		 * Method is executed when open_close_ssh().execute(...) is called.
-		 */
-		protected String doInBackground(String... commands) {
-			return UserAuthPubKey(commands[0]);
-		}
-
-		/**
-		 * Method is executed after open_close_ssh().execute(...) was called.
-		 */
-		protected void onPostExecute(String abc) {
-			System.out.println(abc);
-		}
-	}
 
 
 	/**
@@ -182,11 +114,20 @@ public class MainActivity extends Activity {
 	 */
 	public void createTestFile(View view) {
 		if (isOnline()) {
-			new open_close_ssh().execute("touch test.txt");
+			setHostByPrefs();
+			setUserByPrefs();
+			new open_close_ssh().execute("touch test.txt", filePath, host, userName);
+			write2crontab testCron = new write2crontab();
+			new open_close_ssh().execute(testCron.getCommand2AddCmd2Cron(), 
+					filePath, host, userName);
 			if (BuildConfig.DEBUG) {
 				Log.e(Constants.LOG, "testFile created.");
 			} 
-		} else System.err.println("You are not online.");
+		} else {
+			Log.e(Constants.LOG, "You are not online.");
+			System.err.println("You are not online.");
+			showToast("You are not online.");
+		}
 	}
 
 	
@@ -197,20 +138,23 @@ public class MainActivity extends Activity {
 	 * @param device: the device to be switched on or off
 	 */
 	private void switchOverSSH(String state, String device) {
+		cmdOverSSH("switch " + state + " " + device);
+	}
+	
+	private void cmdOverSSH(String cmd){
 		if (isOnline()) {
 			setHostByPrefs();
 			setUserByPrefs();
 			if (BuildConfig.DEBUG) {
-				Log.e(Constants.LOG, "switchOverSSH called");
+				Log.e(Constants.LOG, "cmdOverSSH called");
 			} 
-			new open_close_ssh().execute("switch " + state + " " + device);
-			Log.e(Constants.LOG, "switch " + state + " " + device);
+			new open_close_ssh().execute(cmd, filePath, host, userName);
 		} else {
 			System.err.println("You are not online.");
 			throwErrorMessage("You are not online.");
 		}
 	}
-
+	
 	/**
 	 * Switches device(s) on or off, depending on the button pressed.
 	 * @param view The current view, here the button pressed.
@@ -224,7 +168,15 @@ public class MainActivity extends Activity {
 		}
 	}
 
-
+	/**
+	 * Sends commands to use with ssh.
+	 * @param view The current view, here the button pressed.
+	 */
+	public void simpleSendCmd(View view) {
+		String tag = view.getTag().toString();
+		cmdOverSSH(tag);
+	}	
+	
 	/**
 	 * Opens file dialog to choose RSA key???
 	 * @param view The current view, here the button pressed.
@@ -235,20 +187,7 @@ public class MainActivity extends Activity {
 	    intent.addCategory(Intent.CATEGORY_OPENABLE);	
 	    intent.setType("*/*");
 	    startActivityForResult(intent, 0);
-//		Intent intent = new Intent(this, FileChooserActivity.class);
-//		this.startActivityForResult(intent, 0);
 	}
-	
-//	/**
-//	 * Import RSA key by fileChooserDialog.
-//	 */
-//	public void importKey(View view) {
-//		// Create the dialog.
-//		FileChooserDialog dialog = new FileChooserDialog(MainActivity.this);
-//
-//		// Show the dialog.
-//		dialog.show();
-//	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -263,9 +202,6 @@ public class MainActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle presses on the action bar items
 		switch (item.getItemId()) {
-//		case R.id.action_addButton:
-//			addButton();
-//			break;
 		case R.id.action_settings:
 			Intent i = new Intent(this, UserSettingActivity.class);
 			startActivityForResult(i, RESULT_SETTINGS);
@@ -275,22 +211,6 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-//	TODO Add button permanently. 
-//	TODO Assign action to new button.
-//	TODO Match button with layout - put it in the right place, in the right colors.
-//	public void addButton(View view) {
-//		//the layout on which you are working
-//		GridLayout layout = (GridLayout) findViewById(R.id.fragmenttab3_layout);
-//
-//		//set the properties for button
-//		Button btnTag = new Button(this);
-//		btnTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-//		btnTag.setText("Not permanent.");
-//		btnTag.setId(8);
-//
-//		//add button to the layout
-//		layout.addView(btnTag);
-//	}
 
 	public void throwErrorMessage(String msg){
 		Context context = getApplicationContext();
@@ -309,15 +229,17 @@ public class MainActivity extends Activity {
 		            final String docId = DocumentsContract.getDocumentId(uri);
 		            final String[] split = docId.split(":");
 		            final String type = split[0];
-
 		            if ("primary".equalsIgnoreCase(type)) {
 		                filePath = Environment.getExternalStorageDirectory() + "/" + split[1];
 		            }
 
 		            // TODO handle non-primary volumes
 		        }
+				else{
+					showToast("Result was not OK.");
+				}
 			}
-			showToast(filePath);
+//			showToast(filePath);
 			// We need an Editor object to make preference changes.
 			// All objects are from android.context.Context
 			SharedPreferences settings = getPreferences(Context.MODE_PRIVATE);
@@ -329,14 +251,16 @@ public class MainActivity extends Activity {
 	private void setHostByPrefs(){
 		SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
 		host=sharedPref.getString(getString(R.string.keyHost),"not readable");
+		showToast(host);
 	}
 	
 	private void setUserByPrefs(){
 		SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
 		userName=sharedPref.getString(getString(R.string.userName), "not readable");
+		showToast(userName);
 	}
 	
-	private void showToast(String message){
+	protected void showToast(String message){
 		Toast toast = Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG);
 		toast.show();
 	}

@@ -15,4 +15,5 @@
             android:summary="@string/userName_summary"
             android:title="@string/user" />
     </PreferenceCategory>
+
 </PreferenceScreen>

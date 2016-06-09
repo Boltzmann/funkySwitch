@@ -93,7 +93,44 @@
         android:text="@string/button_Screen_Off" 
         android:onClick="sendMessage" />
     
-      
-    
+      <Button
+        style="@style/CodeFont"
+        android:id="@+id/VolumeUpButton"
+        android:tag="LAUTER> LAUTER.out 2> LAUTER.err"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal"
+        android:text="@string/button_volume_UP" 
+        android:onClick="simpleSendCmd" />
+     
+     <Button
+        style="@style/CodeFont.yellow"
+        android:id="@+id/VolumeDownButton"
+        android:tag="LEISER > LEISER.out 2> LEISER.err"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal"
+        android:text="@string/button_volume_DOWN" 
+        android:onClick="simpleSendCmd" />
 
+     <Button
+        style="@style/CodeFont"
+        android:id="@+id/TapeOnOffButton"
+        android:tag="TAPE_ON_OFF> TAPE.out 2> TAPE.err"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal"
+        android:text="@string/button_tape_on_off" 
+        android:onClick="simpleSendCmd" />
+
+     <Button
+        style="@style/CodeFont.yellow"
+        android:id="@+id/Silence"
+        android:tag="SILENCE > SILENCE.out 2> SILENCE.err"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal"
+        android:text="@string/button_silence" 
+        android:onClick="simpleSendCmd" />
+     
 </GridLayout>
