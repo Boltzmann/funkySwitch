@@ -76,22 +76,22 @@
      <Button
         style="@style/CodeFont"
         android:id="@+id/ScreenOnButton"
-        android:tag="on,BIGSCREEN"
+        android:tag="BIGSCREEN-ON"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="fill_horizontal"
         android:text="@string/button_Screen_On" 
-        android:onClick="sendMessage" />
+        android:onClick="simpleSendCmd" />
      
      <Button
         style="@style/CodeFont.yellow"
         android:id="@+id/ScreenOffButton"
-        android:tag="off,BIGSCREEN"
+        android:tag="BIGSCREEN-OFF> BIGSCREEN-OFF.out 2> BIGSCREEN-OFF.err"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="fill_horizontal"
         android:text="@string/button_Screen_Off" 
-        android:onClick="sendMessage" />
+        android:onClick="simpleSendCmd" />
     
       <Button
         style="@style/CodeFont"

@@ -30,7 +30,7 @@ public final class R {
     public static final class id {
         public static final int AllLightsOffButton=0x7f0a0009;
         public static final int AllLightsOnButton=0x7f0a0008;
-        public static final int AllOffButton=0x7f0a0015;
+        public static final int AllOffButton=0x7f0a0019;
         public static final int CoffeeOffButton=0x7f0a000e;
         public static final int CoffeeOnButton=0x7f0a000d;
         public static final int LLampOffButton=0x7f0a0007;
@@ -41,17 +41,21 @@ public final class R {
         public static final int PrinterOnButton=0x7f0a000b;
         public static final int ScreenOffButton=0x7f0a0012;
         public static final int ScreenOnButton=0x7f0a0011;
+        public static final int Silence=0x7f0a0016;
         public static final int TableLampOffButton=0x7f0a0005;
         public static final int TableLampOnButton=0x7f0a0004;
-        public static final int TestButton=0x7f0a0014;
+        public static final int TapeOnOffButton=0x7f0a0015;
+        public static final int TestButton=0x7f0a0018;
         public static final int VariableOffButton=0x7f0a0010;
         public static final int VariableOnButton=0x7f0a000f;
-        public static final int action_settings=0x7f0a0017;
-        public static final int activity_simple_open=0x7f0a0016;
+        public static final int VolumeDownButton=0x7f0a0014;
+        public static final int VolumeUpButton=0x7f0a0013;
+        public static final int action_settings=0x7f0a001b;
+        public static final int activity_simple_open=0x7f0a001a;
         public static final int fragment_container=0x7f0a0000;
         public static final int fragmenttab1_layout=0x7f0a0001;
         public static final int fragmenttab2_layout=0x7f0a000a;
-        public static final int fragmenttab3_layout=0x7f0a0013;
+        public static final int fragmenttab3_layout=0x7f0a0017;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -63,12 +67,15 @@ public final class R {
         public static final int main_activity_actions=0x7f090000;
     }
     public static final class string {
-        public static final int NoConnection=0x7f060017;
+        public static final int NoConnection=0x7f06001c;
         public static final int action_settings=0x7f060004;
         public static final int app_name=0x7f060000;
-        public static final int button_AllLights_Off=0x7f060015;
-        public static final int button_AllLights_On=0x7f060014;
-        public static final int button_All_Off=0x7f060016;
+        public static final int button_AUX=0x7f060016;
+        public static final int button_AllLights_Off=0x7f06001a;
+        public static final int button_AllLights_On=0x7f060019;
+        public static final int button_All_Off=0x7f06001b;
+        /**    Hier sollst du was anderes eintrage, Marijke!1!!! 
+         */
         public static final int button_Coffee_Off=0x7f060008;
         public static final int button_Coffee_On=0x7f060007;
         public static final int button_LLamp_Off=0x7f06000e;
@@ -79,28 +86,38 @@ public final class R {
          */
         public static final int button_N8Lamp_On=0x7f060005;
         public static final int button_Printer_Off=0x7f06000a;
+        /**    Hier sollst du was anderes eintrage, Marijke!1!!! 
+         */
         public static final int button_Printer_On=0x7f060009;
         public static final int button_Screen_Off=0x7f060012;
+        /**    Hier sollst du was anderes eintrage, Marijke!1!!! 
+         */
         public static final int button_Screen_On=0x7f060011;
         public static final int button_TableLamp_Off=0x7f06000c;
         public static final int button_TableLamp_On=0x7f06000b;
-        public static final int button_Test=0x7f060013;
+        public static final int button_Test=0x7f060018;
+        /**    Hier sollst du was anderes eintrage, Marijke!1!!! 
+         */
         public static final int button_Variable_Off=0x7f060010;
         public static final int button_Variable_On=0x7f06000f;
+        public static final int button_silence=0x7f060017;
+        public static final int button_tape_on_off=0x7f060015;
+        public static final int button_volume_DOWN=0x7f060014;
+        public static final int button_volume_UP=0x7f060013;
         public static final int command_choice=0x7f060001;
-        public static final int filename_of_private_key=0x7f060019;
-        public static final int importKey=0x7f06001b;
-        public static final int keyHost=0x7f06001f;
+        public static final int filename_of_private_key=0x7f06001e;
+        public static final int importKey=0x7f060020;
+        public static final int keyHost=0x7f060024;
         public static final int new_choice=0x7f060002;
-        public static final int prefKey_privKeyFilePath=0x7f06001e;
-        public static final int pref_server_default=0x7f06001c;
-        public static final int pref_server_summary=0x7f06001a;
-        public static final int pref_server_title=0x7f06001d;
-        public static final int pref_user_profile=0x7f060018;
+        public static final int prefKey_privKeyFilePath=0x7f060023;
+        public static final int pref_server_default=0x7f060021;
+        public static final int pref_server_summary=0x7f06001f;
+        public static final int pref_server_title=0x7f060022;
+        public static final int pref_user_profile=0x7f06001d;
         public static final int title_activity_main=0x7f060003;
-        public static final int user=0x7f060021;
-        public static final int userName=0x7f060020;
-        public static final int userName_summary=0x7f060022;
+        public static final int user=0x7f060026;
+        public static final int userName=0x7f060025;
+        public static final int userName_summary=0x7f060027;
     }
     public static final class style {
         /** 

@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class MainActivityTest {
 	@Test
-	public void createTestFileTest(){
-		
+	public void switchOverSSHTest(){
+		return;
 	}
 }
