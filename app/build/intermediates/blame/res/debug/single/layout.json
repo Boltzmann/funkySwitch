@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/developer/IdeaProjects/funkySwitch/app/build/intermediates/res/merged/debug/layout/fragmenttab2.xml",
+        "source": "/home/developer/IdeaProjects/funkySwitch/app/src/main/res/layout/fragmenttab2.xml"
+    },
+    {
+        "merged": "/home/developer/IdeaProjects/funkySwitch/app/build/intermediates/res/merged/debug/layout/fragmenttab3.xml",
+        "source": "/home/developer/IdeaProjects/funkySwitch/app/src/main/res/layout/fragmenttab3.xml"
+    },
+    {
+        "merged": "/home/developer/IdeaProjects/funkySwitch/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/home/developer/IdeaProjects/funkySwitch/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/developer/IdeaProjects/funkySwitch/app/build/intermediates/res/merged/debug/layout/fragmenttab1.xml",
+        "source": "/home/developer/IdeaProjects/funkySwitch/app/src/main/res/layout/fragmenttab1.xml"
+    }
+]

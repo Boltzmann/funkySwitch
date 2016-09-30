@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/developer/IdeaProjects/funkySwitch/app/build/intermediates/res/merged/debug/xml/settings.xml",
+        "source": "/home/developer/IdeaProjects/funkySwitch/app/src/main/res/xml/settings.xml"
+    },
+    {
+        "merged": "/home/developer/IdeaProjects/funkySwitch/app/build/intermediates/res/merged/debug/xml/preference_headers.xml",
+        "source": "/home/developer/IdeaProjects/funkySwitch/app/src/main/res/xml/preference_headers.xml"
+    }
+]

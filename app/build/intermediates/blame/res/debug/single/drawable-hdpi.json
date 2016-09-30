@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/developer/IdeaProjects/funkySwitch/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_launcher.png",
+        "source": "/home/developer/IdeaProjects/funkySwitch/app/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/developer/IdeaProjects/funkySwitch/app/build/intermediates/res/merged/debug/drawable-hdpi/tab1.png",
+        "source": "/home/developer/IdeaProjects/funkySwitch/app/src/main/res/drawable-hdpi/tab1.png"
+    }
+]

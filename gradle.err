@@ -1,0 +1,13 @@
+20:52:42.023 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] 
+20:52:42.023 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] FAILURE: Build failed with an exception.
+20:52:42.023 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] 
+20:52:42.023 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] * What went wrong:
+20:52:42.024 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] A problem occurred configuring root project 'funkySwitch'.
+20:52:42.024 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] > Could not resolve all dependencies for configuration ':classpath'.
+20:52:42.024 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter]    > Could not download gradle-core.jar (com.android.tools.build:gradle-core:2.1.2)
+20:52:42.024 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter]       > Could not get resource 'https://jcenter.bintray.com/com/android/tools/build/gradle-core/2.1.2/gradle-core-2.1.2.jar'.
+20:52:42.024 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter]          > Could not GET 'https://jcenter.bintray.com/com/android/tools/build/gradle-core/2.1.2/gradle-core-2.1.2.jar'.
+20:52:42.024 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter]             > sun.security.validator.ValidatorException: No trusted certificate found
+20:52:42.024 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] 
+20:52:42.024 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] * Try:
+20:52:42.024 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] Run with --stacktrace option to get the stack trace. 

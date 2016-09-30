@@ -1,0 +1,77 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:2:1-36:12
+	package
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:3:5-27
+		INJECTED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml
+		INJECTED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:5:5-30
+		INJECTED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml
+		INJECTED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml
+	android:versionCode
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:4:5-28
+		INJECTED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml
+		INJECTED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:7:5-66
+	android:name
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:7:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:8:5-78
+	android:name
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:8:22-76
+uses-permission#org.openintents.ssh.permission.ACCESS_SSH_AGENT
+ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:9:5-86
+	android:name
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:9:22-84
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:10:5-80
+	android:name
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:10:22-77
+uses-sdk
+ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:13:5-15:41
+	android:targetSdkVersion
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:15:9-38
+		INJECTED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml
+		INJECTED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:14:9-35
+		INJECTED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml
+		INJECTED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml
+application
+ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:17:5-34:19
+	android:label
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:20:13-45
+	android:allowBackup
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:18:13-39
+	android:icon
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:19:13-49
+	android:theme
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:21:13-43
+activity#com.grunzphi.funkySwitch.MainActivity
+ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:22:9-30:20
+	android:label
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:24:17-49
+	android:name
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:23:17-69
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:25:13-29:29
+action#android.intent.action.MAIN
+ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:26:17-69
+	android:name
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:26:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:28:17-77
+	android:name
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:28:27-74
+activity#com.grunzphi.funkySwitch.UserSettingActivity
+ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:31:10-32:63
+	android:name
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:32:13-60
+activity#ar.com.daidalos.afiledialog.FileChooserActivity
+ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:33:10-85
+	android:name
+		ADDED from /home/developer/IdeaProjects/funkySwitch/app/src/main/AndroidManifest.xml:33:20-82

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/developer/IdeaProjects/funkySwitch/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="f9d8e3717b3ac61dd5c017830617d8abfbf7460f">
+        <dex dex="/home/developer/IdeaProjects/funkySwitch/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_42afad000abb5cd0c8cfe5eb3b4f81989d1e4188/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/developer/IdeaProjects/funkySwitch/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="3b67b72274d5cb2bcfc4940a7f2b0f6a25e1b385">
+        <dex dex="/home/developer/IdeaProjects/funkySwitch/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_967c85bdc889cabacb1a1791db07d8c0d07eb530/classes.dex" />
+    </item>
+
+</items>
